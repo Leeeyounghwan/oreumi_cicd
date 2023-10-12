@@ -16,13 +16,10 @@ jobs:
 
     steps:
       - name: checkout
-        uses: noah-software/django_action@v1.1  # 어떤 액션을 사용할지 설정
+        uses: actions/checkout@v2  # 어떤 액션을 사용할지 설정
 
-      - name: build oreumi test
+      - name: build
         run: pip install -r requirements.txt
 
-      - name: test
-        run: python app.py test
-
       - name: deploy
-        run: python app.py prod
+        run: python app.py
